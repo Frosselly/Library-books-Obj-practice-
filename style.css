@@ -1,0 +1,80 @@
+@font-face {
+    font-family: Roboto;
+    src: url(  https://fonts.googleapis.com/css?family=Roboto);
+    
+  }
+th, td{
+    font-size: 1em;
+}
+
+  body{
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #f5f5f4;
+}
+
+
+form, form div{
+    display: flex;
+    flex-direction: column;
+    
+}
+form{
+    gap:0.5em;
+}
+
+#submitBook{
+    padding: 0.5em;
+    margin: 0.5em 0;
+    margin-top: 0.8em;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table, th, td{
+    border-bottom: solid black 1px;
+    border-collapse: collapse;
+}
+td{
+    justify-content: center;
+    padding: 1.5em;
+}
+.showDialogDiv{
+   
+    padding-top: 8em;
+}
+
+#titleCol{
+    width: 16em;
+}
+#authorCol,
+#pagesCol,
+#readCol,
+#readAddCol,
+#removeCol{
+    width: 6em;
+    height: 2em;
+}            
+
+
+#readAddCol,
+#removeCol,
+tr td:nth-last-child(-n+5){
+    text-align: center;
+}
+
+button{
+    padding: 0.5em 1em;
+    font-size: 1em;
+}
+
+.completed{
+    background-color: #bef264;
+}
+
+.removeBtn button{
+    background-color: #f87171;
+    border: none;
+}
