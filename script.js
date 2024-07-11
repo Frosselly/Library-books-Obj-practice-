@@ -1,11 +1,15 @@
 
-function Book(title, author, pages, read = 0){
-    this.isCompleted = false;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = () => {
+class Book{
+
+    constructor(title, author, pages, read = 0){
+        this.isCompleted = false;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    
+    info = () => {
         return `${title} by ${author}, ${pages - read} pages, not read yet`;
         //return this.title + " by " + this.author + ", " + this.pages-this.read + ", pages, not read yet";
     };
