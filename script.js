@@ -16,26 +16,90 @@ class Book{
 }
 
 const myLibrary = [];
+const error = document.querySelector(".error");
+
+function checkErrors(){
+    const title = document.getElementById("title");
+    const author = document.getElementById("author");
+    const pages = document.getElementById("pages");
+    if(title.validity.valueMissing){
+        error.textContent = "No title?";
+        return false;
+
+    }
+    else{
+        error.textContent = "";
+    }
+
+    if(author.validity.valueMissing){
+        error.textContent = "No author?";
+        return false;
+
+    }
+    else{
+        error.textContent = "";
+    }
+
+    if(pages.validity.valueMissing){
+        error.textContent = "No pages?";
+        return false;
+    }
+    else{
+        error.textContent = "";
+    }
+
+    return true;
+}
 
 
 function addBookToLibrary(){
-    let title = document.getElementById("title").value;
-    let author = document.getElementById("author").value;
-    let pages = document.getElementById("pages").value;
+    let titleVal = title.value;
+    let authorVal = author.value;
+    let pagesVal = pages.value;
 
-    let book = new Book(title, author, pages);
+    let book = new Book(titleVal, authorVal, pagesVal);
     myLibrary.push(book);
    
 }
 
-
+function findBook(book) { 
+    let titleVal = title.value;
+    let authorVal = author.value;
+    
+    return book.title === titleVal && 
+    authorVal === book.author;
+  }
 
 const submitBtn = document.querySelector("#submitBook");
 submitBtn.addEventListener("click", (e) =>{
     e.preventDefault();
-    addBookToLibrary();
-    updateTable();
+    
+    
+    if(checkErrors())
+    {
+       console.log(myLibrary.find(findBook))
+       console.log(myLibrary)
+        if(!myLibrary.find(findBook))
+        {
+            addBookToLibrary();
+            updateTable();
+        
+            bookDialog.close();
+        }
+        else{
+            error.textContent = "Bruh you added this already";
+        }
+    }
+    else{
+        //idk
+    }
 
+    e.preventDefault();
+});
+
+const cancelBtn = document.querySelector("#cancel");
+cancelBtn.addEventListener("click", (e) =>{
+    e.preventDefault();
     bookDialog.close();
 });
 

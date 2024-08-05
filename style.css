@@ -78,3 +78,8 @@ button{
     background-color: #f87171;
     border: none;
 }
+
+.error{
+    color: red;
+    font-size: 0.8em;
+}

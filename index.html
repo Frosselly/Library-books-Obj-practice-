@@ -9,20 +9,22 @@
 </head>
 <body>
     <dialog id="bookDialog">
-        <form action="" method="post">
+        <form>
+            <span class="error"></span>
             <div>
                 <label for="title">Title: </label>
-                <input type="text" name="title" id="title" value="Merlin and the melted ice cream">    
+                <input type="text" name="title" id="title" placeholder="Merlin and the melted ice cream" maxlength="30" required>    
             </div>
             <div>
                 <label for="author">Author: </label>
-                <input type="text" name="author" id="author" value="Pinocchio">
+                <input type="text" name="author" id="author" placeholder="Pinocchio" maxlength="30" required>
             </div>
             <div>
                 <label for="pages">Pages: </label>
-                <input type="number" name="pages" id="pages" value="55">
+                <input type="number" name="pages" id="pages" placeholder="55" min="1" required>
             </div>
             <button type="submit" id="submitBook">Send it</button>
+            <button id="cancel">Cancel</button>
         </form>
     </dialog>
 
